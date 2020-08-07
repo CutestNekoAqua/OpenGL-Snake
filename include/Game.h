@@ -8,6 +8,7 @@
 #include "SpriteRenderer.h"
 #include "resource_manager.h"
 #include "GameLevel.h"
+#include "Keys.h"
 
 enum GameState {
     GAME_ACTIVE,
@@ -23,7 +24,6 @@ public:
 // game state
     GameState    State;
     GameLevel    Level;
-    bool         Keys[1024];
     unsigned int Width, Height;
     // constructor/destructor
     Game(unsigned int width, unsigned int height);

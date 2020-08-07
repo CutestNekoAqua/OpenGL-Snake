@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 set( GLFW-CMAKE-SRC
         main.cpp
         glad.c
-        include/main.h Game.cpp include/Game.h include/shader.h shader.cpp include/texture.h texture.cpp include/resource_manager.h resource_manager.cpp include/stb_image.h SpriteRenderer.cpp include/SpriteRenderer.h include/GameObject.h GameObject.cpp include/GameLevel.h GameLevel.cpp)
+        include/main.h Game.cpp include/Game.h include/shader.h shader.cpp include/texture.h texture.cpp include/resource_manager.h resource_manager.cpp include/stb_image.h SpriteRenderer.cpp include/SpriteRenderer.h include/GameObject.h GameObject.cpp include/GameLevel.h GameLevel.cpp include/Keys.h)
 
 find_package( OpenGL REQUIRED )
 

@@ -5,12 +5,15 @@
 #include <iostream>
 
 #include "texture.h"
-
+#include <GLFW/glfw3.h>
 
 Texture2D::Texture2D()
         : Width(0), Height(0), Internal_Format(GL_RGB), Image_Format(GL_RGB), Wrap_S(GL_REPEAT), Wrap_T(GL_REPEAT), Filter_Min(GL_LINEAR), Filter_Max(GL_LINEAR)
 {
-    glGenTextures(1, reinterpret_cast<GLuint *>(this->ID));
+    if (gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        glGenTextures(1, reinterpret_cast<GLuint *>(this->ID));
+        glGetError();
+    }
 }
 
 void Texture2D::Generate(unsigned int width, unsigned int height, unsigned char* data)

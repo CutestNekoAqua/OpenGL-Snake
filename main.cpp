@@ -1,9 +1,10 @@
 #include <iostream>
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
-#include "main.h"
-//#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+
+#include "Keys.h"
 #include "Game.h"
 #include "resource_manager.h"
 
@@ -15,8 +16,6 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 const unsigned int SCREEN_WIDTH = 800;
 // The height of the screen
 const unsigned int SCREEN_HEIGHT = 600;
-
-Game Snake;
 
 void process_input(GLFWwindow *window) {
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -58,7 +57,7 @@ int main()
 
     printf("Initing game");
 
-    Snake = Game(SCREEN_WIDTH, SCREEN_HEIGHT);
+    Game Snake(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     // Init Game
     Snake.Init();
@@ -120,9 +119,9 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key >= 0 && key < 1024)
     {
         if (action == GLFW_PRESS)
-            Snake.Keys[key] = true;
+            Key::Keys[key] = true;
         else if (action == GLFW_RELEASE)
-            Snake.Keys[key] = false;
+            Key::Keys[key] = false;
     }
 }
 
